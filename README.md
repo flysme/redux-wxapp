@@ -33,13 +33,3 @@ const todos = (state = {},action) =>{
     2. state不可变     : 确保view和API请求不能更改state
     3. reducer 纯函数  : 保证了数据可控性，没有副作用
 ```
-
-
-## Note
-业务侧可以自行判断数据是否加载完成，进而隐藏骨架屏，比如  
-`<skeleton selector="skeleton" wx:if="{{showSkeleton}}"></skeleton>`  
-
-以最小节点原则添加相应的class，比如
-`<view class="box skeleton-rect">这是有margin和padding属性的文案</view>`
-这里不要给view添加class，不然绘制区域会大很多，应该改成这样  
-`<view class="box"><text class="skeleton-rect">这是有margin和padding属性的文案</text></view>`

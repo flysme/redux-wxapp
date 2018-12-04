@@ -29,9 +29,9 @@ const todos = (state = {},action) =>{
 ```
 ## redux 三大特性
 ```
-    ``1. 单一数据源       :  state 由一棵 object tree组成
-    ``2. state不可变     : 确保view和API请求不能更改state
-    ``3. reducer 纯函数  : 保证了数据可控性，没有副作用
+    1. 单一数据源       :  state 由一棵 object tree组成
+    2. state不可变     : 确保view和API请求不能更改state
+    3. reducer 纯函数  : 保证了数据可控性，没有副作用
 ```
 
 

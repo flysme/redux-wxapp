@@ -1,0 +1,64 @@
+/* pages/partner/after_market/index.wxss */
+
+page {
+    background-color: #f8f8f8;
+}
+
+.title {
+    padding-top: 30rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+}
+
+.reason-box {
+    padding-left: 30rpx;
+    font-size: 28rpx;
+    border-top: 2rpx solid #f2f2f2;
+    background-color: #fff;
+}
+
+.reason-list {
+    display: flex;
+    height: 88rpx;
+    align-items: center;
+    padding-right: 30rpx;
+    box-sizing: border-box;
+    justify-content: space-between;
+    border-bottom: 2rpx solid #fafafa;
+}
+
+.reason-list .icon-box {
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.description-box {
+    padding: 0 30rpx;
+    background-color: #fff;
+    margin-top: 15rpx;
+    padding-bottom: 50rpx;
+    box-sizing: border-box;
+}
+
+.description-box textarea {
+    background-color: #f2f2f2;
+    width: 100%;
+    padding: 20rpx;
+    box-sizing: border-box;
+    margin-top: 30rpx;
+    font-size: 28rpx;
+}
+
+.button-box {
+    margin:30rpx;
+    box-sizing: border-box;
+}
+
+.button-box .gege-btn {
+    background-color: #FF8930;
+    border: none;
+}
+
+.button-box .gege-btn:active {
+    background-color: #ff9802;
+}

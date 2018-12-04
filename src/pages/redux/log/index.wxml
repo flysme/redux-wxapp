@@ -1,0 +1,3 @@
+<!--pages/redux/log/index.wxml-->
+<view>current-----to--log</view>
+<view bindtap="setcount">current-----to--log</view>

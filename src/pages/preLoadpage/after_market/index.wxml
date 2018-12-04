@@ -1,0 +1,74 @@
+<!--pages/partner/after_market/index.wxml-->
+<view class='page'>
+    <view class='page_bd'>
+        <view class="weui-cells__title">售后处理</view>
+        <view class="weui-cells weui-cells_after-title">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="weui-cell weui-check__label" wx:for="{{aReason}}" wx:key="value">
+                    <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" color="#FF8930" size="23" wx:if="{{!item.checked}}"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" color="#FF8930" size="23" wx:if="{{item.checked}}"></icon>
+                    </view>
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                </label>
+            </checkbox-group>
+        </view>
+        <view class='goods-list' wx:if="{{aReason[0].checked}}" hidden='ture'>
+            <view class="weui-cells__title">售后商品</view>
+            <view class='weui-cells weui-cells_after-title'>
+                <checkbox-group bindchange="checkboxChange">
+                    <label class="weui-cell weui-check__label" wx:for="{{goods_list}}" wx:key="value">
+                        <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+                        <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                            <icon class="weui-icon-checkbox_circle" type="circle" color="#FF8930" size="23" wx:if="{{!item.checked}}"></icon>
+                            <icon class="weui-icon-checkbox_success" type="success" color="#FF8930" size="23" wx:if="{{item.checked}}"></icon>
+                        </view>
+                        <view class="weui-cell__bd">{{item.name}}</view>
+                    </label>
+                </checkbox-group>
+            </view>
+        </view>
+        <view class="weui-cells__title">退款金额</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input"  bindinput='setRefundAmount' placeholder="{{total_fee?'最高可退'+total_fee/100+'元':'请输入退款金额'}}" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">问题描述</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea color-gray" bindinput="setDescription" placeholder="请填写问题描述" style="height:180rpx;" placeholder-class="color-gray" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">上传图片（至少上传一张）</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box" hidden='{{files.length===3}}'>
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="button-box">
+            <button class="weui-btn gege-btn" type="primary" bindtap="submit">提交</button>
+        </view>
+    </view>
+    <view class="gege-tip fixed" animation="{{animOfNoneNetWork}}">{{animMsg}}</view>
+</view>

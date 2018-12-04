@@ -1,0 +1,2 @@
+<!--pages/preLoadpage/index.wxml-->
+<text>{{name}}</text>

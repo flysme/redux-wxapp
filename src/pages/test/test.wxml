@@ -1,0 +1,48 @@
+<view class="box">
+  <view bindtap="start">上传</view>
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit='true'>
+      <view class="btn-area">
+          <button formType="submit">Submit</button>
+          <button formType="reset">Reset</button>
+      </view>
+  </form>
+  <view bindtap='tobottom'>去底部</view>
+  
+  <text>
+  121
+  21212
+  21212
+  21212
+  2121212
+  123
+  23433
+  4343
+  4343
+  4
+  34
+  34
+  34
+  343
+  43
+  4
+  3434
+
+  34
+  34
+  34
+  3
+  43
+  43
+  43
+  434
+  3
+  4
+  34
+  3
+  43
+  4
+  34
+  3
+  </text>
+  <view bindtap='setting'>用户设置</view>
+</view>

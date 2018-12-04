@@ -1,0 +1,12 @@
+.bind-test-pre-load{
+    width: 200rpx;
+    font-size: 30rpx;
+    padding:10rpx;
+    color: #FFf;
+    background-color: #000;
+    border-radius: 20rpx;
+    text-align: center;
+    position: absolute;
+    top:50%;
+    left:25%;
+}

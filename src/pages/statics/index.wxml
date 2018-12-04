@@ -1,0 +1,4 @@
+<view>
+  <view>statics</view>
+  <view bindtap='tohome'>去首页</view>
+</view>

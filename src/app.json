@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/preIndexpage/index",
+    "pages/preLoadpage/index",
+    "pages/index/index",
+    "pages/statics/index",
+    "pages/storage/index",
+    "pages/test/test"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/redux",
+      "pages": [
+        "home/index",
+        "log/index"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -22,14 +22,14 @@ export default class Store {
         let dispatch = store.dispatch;
         let that = this;
         this.store = store;
-        this.store.dispatch=function(args){
-            return new Promise((resolve,reject)=>{
-                let {module,actions} = args;
-                dispatch(actions);
-                that.store.state[module] =  that.store.getState()[module]
-                resolve(that.store.state);
-            })
-        }
+        // this.store.dispatch=(args)=>{
+        //     return new Promise((resolve,reject)=>{
+        //         let {module,actions} = args;
+        //         dispatch(actions);
+        //         this.store.state[module] =  this.store.getState()[module];
+        //         resolve(that.store.state);
+        //     })
+        // }
     }
     setProtosToThis() {
         let properties = Object.getOwnPropertyNames(this.__proto__);
@@ -44,9 +44,16 @@ export default class Store {
         }
         console.log(this,'properties')
     }
-    refresh (key) {
-        let store = this.store;
-        let data  = Object.assign({},store.getState()[that.module][key]);
-        this.setData(data);
+    connect (data,that) {
+        this.store.subscribe(() => {
+            let refreshMainData = {};
+            let state = this.store.getState();
+            console.log(state,'state')
+            for (let fnkey in data) {
+                let refreshData = (typeof data[fnkey]=='function')&&data[fnkey](state);
+                Object.assign(refreshMainData,{[fnkey]:refreshData})
+            }
+            // refreshMainData && that.setData(refreshMainData);
+         })
     }
 }

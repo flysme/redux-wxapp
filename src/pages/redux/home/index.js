@@ -9,18 +9,24 @@ class Home extends Store {
           this.init();
 
       }
-      init = ()=>{
+      init(){
           let that = this;
           let store = this.store;
           // store.subscribe(() => {
           //     console.log('getState',this.store)
           // })
-         //  store.dispatcher({
-         //      module:'HOME',
-         //      actions:TODOS.waiting()
-         //  }).then(state=>{
-         //      console.log(this.store.state,'store')
-         //  })
+         this.connect({
+             iswaiting (state) {
+                 return state.HOME.iswaiting
+             }
+         },this)
+          store.dispatch(TODOS.waiting())
+
+          // store.dispatch(TODOS.async()).then(_=>{
+          //     console.log(store.getState(),'res')
+          // })
+
+
          // this.data.timer = setInterval(_ => {
          //     store.dispatcher({
          //         module:'HOME',
@@ -30,9 +36,7 @@ class Home extends Store {
          //     })
          // }, 2000)
 
-         store.dispatch(TODOS.async()).then(_=>{
-             console.log(store.getState(),'res')
-         })
+
 
       }
       navigator=()=>{

@@ -1,0 +1,17 @@
+<view>
+    <view class="wxapp">
+        {{name}}
+    </view>     
+    <view>
+        {{now}}
+    </view>
+    <view bindtap="setnum">
+        {{name}}
+    </view>
+    <view>
+        count: {{count}}
+    </view>
+    <view>
+        time : {{time}}
+    </view>
+</view>

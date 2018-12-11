@@ -1,4 +1,4 @@
 <!--pages/redux/home/index.wxml-->
 <text>pages/redux/home/index.wxml</text>
 <view class="">{{count}}</view>
-<view  bindtap="navigator">当前count------{{count}}</view>
+<view  bindtap="navigator">当前count------{{iswaiting}}</view>
